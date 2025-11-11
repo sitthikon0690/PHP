@@ -1,0 +1,46 @@
+html,body{/*กำหนดความสูงของ HTML element และ body element ให้เต็มพื้นที่หน้าจอ (100%)*/
+    position: relative;/*จัดว่างทับอื่นๆได้และอื่นๆจะไม่เลื่อน(ไม่มีก็ได้)*/
+    height: 100%;/*ให้เต็มหน้าจอ(ไม่มีก็ได้)*/
+    overflow: hidden;/*ซ่อนเนื้อหาใดๆที่ล้นออกจากขอบของ(ทั้งบนและล่าง) HTML element และ body element และที่เลื่อนด้านข้างก็จะหายไปเพราะไม่ล้น*/
+}
+body{
+    margin: 0;/*ระยะห่างขอบBodyกับhtmlให้เป็น0เพื่อให้พื้นหลังเต็ม*/
+    padding: 0;/*ระยะห่างกล่องสีขาวกับขอบBody*/
+    height: 100vh;/*กำหนดความสูงของ body element ให้เต็มพื้นที่หน้าต่างมองเห็น (viewport height)*/
+    display: flex;/*ล็อคไม่ให้Bodyให้อยู่กับหน้าจอ(กรณีนี้ไม่จำเป็นเพราะoverflow: hiddenเนื้อหาจะไม่ล้นจึงไม่ได้เลื่อนขึ้นลงจึงไม่จำเป็น)*/
+    align-items: center;/*สิ่งที่ข้างในให้อยู่กึ่งกลาง แกน y*/
+    justify-content: center;/*สิ่งที่ข้างในให้อยู่กึ่งกลาง แกน x*/
+    background: linear-gradient(to top left , rgb(138,11,11), rgb(7,7,121));/*สีพื้นหลัง*/
+}
+.swiper{/*สร้างกล่องสีขาว(ลองคอมเม้นทุกอย่างข้างในกล่อง(class="swiper mySwiper")แล้วจะเห็ฯผลลัพธ์)*/
+    width: 900px;/*ขนาดความกว้างกล่อง*/
+    border-radius: 8px;/*ลดมุมกล่อง*/
+    padding: 50px 0px;/*ระยะห่างเนื้อหาข้างในกล่อง(class="swiper-wrapper")กับขอบกล่องนี้ (50 บนล่าง 0 ซ้ายขวา)*/
+    overflow-x: hidden;/*ซ้อนเนื้อหาที่ล้นและที่เลื่อนด้านล่างก็จะหายไปเพราะไม่ล้น แกน x เท่านั้น*/
+    background: rgba(255,255,255,0.1);/*พื้นหลังสีดำ*/
+    -webkit-backdrop-filter: blur(1px);/*ปรับความเบลอสำหรับเว็บเบราว์เซอร์บางรุ่นที่ไม่รองรับ*/
+    backdrop-filter: blur(1px);/*ปรับความเบลอ*/
+    border: 1px solid rgba(255,255,255,0.05);/*เส้นขอบ*/
+}
+.swiper-slide{/*กล่องที่ใส่แต่ละรูป*/
+    background-position: center;/*ไม่จำเป็นเพราะไม่มีพื้นหลัง*/
+    background-size: cover;/*ไม่จำเป็นเพราะไม่มีพื้นหลัง*/
+    width: 300px;/*กำหนดความกว้างกล่องเป็น 300px)*/
+    height: 300px;/*กำหนดความสูงกล่องเป็น 300px)*/
+}
+.swiper-slide img{/*ปภาพทั้งหมดที่อยู่ภายใน swiper-slide*/
+    display: block;/*ไม่จำเป็น Class นี้ให้เรียงต่อกันลงไปเลื่อยๆ(ลองเพิ่มรูปในกล่อง.swiper-slideอีก จะเห็นผลลัพธ์)*/
+    /*object-fit: cover;เอาตรงกลางและให้รูปไม่บีบ ข้อเสียรูปแสดงแค่ตรงกลาง*/
+    width: 100%;/*(ให้เต็มกล่อง(width: 300px)กำหนดความกว้างของรูปภาพให้เป็น 100% ของ wiper-slide*/
+    height: 100%;/*(ให้เต็มกล่อง(height: 300px)กำหนดความสูงของรูปภาพให้เป็น 100% ของ wiper-slide*/
+}
+#particles-js{/*เป็นส่วนที่จัดการตำแหน่งanimationให้อยู่ด้านหลังกล่อง*/
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    z-index: -1;
+}

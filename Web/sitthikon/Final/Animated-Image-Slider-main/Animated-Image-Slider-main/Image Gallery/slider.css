@@ -1,0 +1,46 @@
+html,
+body{
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to top left , rgb(138,11,11), rgb(7,7,121));
+}
+.swiper{
+    /* width: 900px; */
+    border-radius: 8px;
+    padding: 50px 0px;
+    /* overflow-x: hidden; */
+    /* background: rgba(255,255,255,0.1);
+    -webkit-backdrop-filter: blur(1px);
+    backdrop-filter: blur(1px);
+    border: 1px solid rgba(255,255,255,0.05); */
+}
+.swiper-slide{
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+}
+.swiper-slide img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+#particles-js{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    z-index: -1;
+}
